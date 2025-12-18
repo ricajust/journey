@@ -1,21 +1,17 @@
-<p>travel-card works!</p>
-
 <mat-card class="card-travel">
   <mat-card-header>
-    <div mat-card-avatar class="card-travel-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <div mat-card-avatar [style.backgroundImage]="'url(' + image + ')'"></div>
+    <mat-card-title>{{ capital }}</mat-card-title>
+    <mat-card-subtitle>{{ state }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
+  <img mat-card-image [src]="image" alt="{{capital}}" class="card-image">
+  <mat-card-content class="card-content">
     <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
+      {{ description }}
     </p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
+  <mat-card-actions class="wrap-action-buttons">
+    <button mat-button (click)="openDialog()">EDITAR</button>
+    <button mat-button (click)="openDialog()">DELETAR</button>
   </mat-card-actions>
 </mat-card>

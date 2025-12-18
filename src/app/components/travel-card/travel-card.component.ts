@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-travel-card',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TravelCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() image!: string;
+  @Input() capital!: string;
+  @Input() state!: string;
+  @Input() description!: string;
+
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog() {
+    this.dialog.open(DialogDataExampleDialog, {
+      data: {
+        animal: 'panda',
+      },
+    });
   }
 
 }

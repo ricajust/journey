@@ -1,8 +1,25 @@
-<mat-card>
+<mat-card class="card-tickets">
     <mat-card-title>Passagens</mat-card-title>
-    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle value="bold">Bold</mat-button-toggle>
-        <mat-button-toggle value="italic">Italic</mat-button-toggle>
-        <mat-button-toggle value="underline">Underline</mat-button-toggle>
+    <mat-button-toggle-group name="Passagens" aria-label="Pesquisa de passagens">
+        <mat-button-toggle value="ida-e-volta">Ida e volta</mat-button-toggle>
+        <mat-button-toggle value="somente-ida">Somente ida</mat-button-toggle>
     </mat-button-toggle-group>
+    <form class="form-field">
+        <mat-form-field class="" appearance="fill">
+            <mat-icon matPrefix>flight_takeoff</mat-icon>
+            <mat-label>Origem</mat-label>
+            <input type="text" matInput placeholder="Insira a origem">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <button mat-icon-button color="primary" aria-label="" class="button-change">
+            <mat-icon>sync_alt</mat-icon>
+        </button>
+        <mat-form-field class="" appearance="fill">
+            <mat-icon matPrefix>flight_land</mat-icon>
+            <mat-label>Destino</mat-label>
+            <mat-icon matSuffix>search</mat-icon>
+            <input type="text" matInput placeholder="Insira o destino">
+        </mat-form-field>
+        <button mat-flat-button color="primary" class="button-find" ()="">Buscar</button>
+    </form>
 </mat-card>

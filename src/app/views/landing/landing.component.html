@@ -1,6 +1,15 @@
-<p>landing works!</p>
-
-<div class="banner">Banner</div>
-<app-tickets></app-tickets>
-<app-travel-card></app-travel-card>
-<app-tickets></app-tickets>
+<div class="banner">
+    <img src="./assets/banner.png" alt="">
+</div>
+<main class="main">
+    <app-tickets></app-tickets>
+    <div class="travel-cards">
+        <app-travel-card
+            [image]="card.destinationInfo.image"
+            [capital]="card.destinationInfo.capital"
+            [state]="card.destinationInfo.state"
+            [description]="card.destinationInfo.description"
+            *ngFor="let card of mockPesquisa">
+        </app-travel-card>
+    </div>
+</main>
